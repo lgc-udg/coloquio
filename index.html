@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="colloquiumApp" ng-controller="MainController" ng-class="{'dark': isDarkMode}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Coloquio LGC 2026A</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  
+  <style>
+    body {
+      font-family: 'Calibri Light', 'Calibri', 'Segoe UI', Roboto, sans-serif;
+      transition: background-color 0.3s ease, color 0.2s ease;
+    }
+    .card, button, a { transition: all 0.2s ease-in-out; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.15); }
+    
+    /* Modo Oscuro */
+    .dark .card { background-color: #1e293b; border-color: #334155; }
+    .dark body { background-color: #0f172a; color: #e2e8f0; }
+    .dark a { color: #7dd3fc; }
+    .dark a:hover { color: #bae6fd; }
+
+    /* Estilos de Tabla */
+    .table-container { border-radius: 12px; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased dark:bg-slate-900 dark:text-slate-200">
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+
+    <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
+      <a href="https://cugdl.udg.mx/" target="_blank" rel="noopener noreferrer">
+        <img src="CUGDL.png" alt="Logo CUGDL" class="h-16 md:h-20 object-contain drop-shadow-md cursor-pointer">
+      </a>
+      
+      <div class="flex items-center gap-6">
+        <h1 class="text-2xl md:text-3xl font-light tracking-wide text-indigo-700 dark:text-indigo-300">Coloquio LGC 2026A</h1>
+        <button ng-click="toggleDarkMode()" 
+                class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-200 shadow-md hover:scale-110 flex items-center justify-center text-xl">
+          <span ng-if="!isDarkMode">☀️</span>
+          <span ng-if="isDarkMode">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="mb-12">
+      <img src="Portada Coloquio 2026A.png" alt="Portada" class="w-full max-w-3xl mx-auto h-64 md:h-96 object-cover shadow-xl rounded-2xl">
+      <p class="text-center mt-5 text-3xl md:text-4xl font-light text-indigo-600 dark:text-indigo-400 tracking-wide">
+        09 al 12 de marzo de 2026
+      </p>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-4">📋 Presentación</h2>
+      <p class="text-lg leading-relaxed">Una práctica común en el mundo académico es crear espacios de socialización de información entre estudiantes y docentes para compartir, discutir y retroalimentar descubrimientos, dudas y preocupaciones sobre los proyectos en los que se trabajan actualmente con el fin de mejorar el trabajo que se realiza.</p>
+      <p class="text-lg leading-relaxed mt-4">Este Coloquio forma parte de las actividades de aprendizaje de los tres últimos semestres de la Licenciatura en Gestión Cultural. Su modalidad es virtual y su propósito principal es que los estudiantes puedan presentar públicamente los avances de sus trabajos recepcionales con el fin de recibir retroalimentaciones de parte de sus compañeros y profesionales e investigadores de la gestión cultural para mejorar su trabajo de grado.</p>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-4">🎯 Objetivo</h2>
+      <p class="text-lg leading-relaxed">Generar un espacio de trabajo sincrónico para la socialización, discusión y retroalimentación de los avances del trabajo recepcional de titulación de los estudiantes de la Licenciatura en Gestión Cultural.</p>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-4">⚙️ Dinámica para el trabajo de los estudiantes LGC</h2>
+      <p class="text-lg leading-relaxed">El coordinador del coloquio organizará las mesas de trabajo y la publicación del programa se realizará el 1 de marzo del 2026.</p>
+      <p class="text-lg leading-relaxed mt-4">Durante el Coloquio, cada uno de los estudiantes (de acuerdo con el programa que se presenta más adelante) hará una presentación oral (apoyados de algunas diapositivas) no mayor a 15 minutos. Posteriormente, se contará con la participación de comentaristas: el asesor de grupo, un compañero del laboratorio y un invitado. Cada uno de ellos expondrá en 7 minutos sus observaciones al trabajo a partir de la guía del comentarista. Finalmente se dará un cierre por parte del expositor. El trabajo se realizará de manera sincrónica a través de las salas ZOOM de la Universidad de Guadalajara.</p>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-6">🗂️ Mesas temáticas del Coloquio 2026A</h2>
+      
+      <div class="mb-6">
+        <input type="text" ng-model="search" placeholder="🔍 Buscar por expositor, proyecto o mesa..." 
+               class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-600 dark:bg-slate-700 focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
+      </div>
+
+      <div class="overflow-x-auto table-container shadow-sm border border-gray-100 dark:border-slate-700">
+        <table class="min-w-[1000px]">
+          <thead class="bg-indigo-600 text-white dark:bg-indigo-900">
+            <tr>
+              <th class="px-4 py-4 text-left">Mesa / Enlace</th>
+              <th class="px-4 py-4 text-left">Fecha y Horario</th>
+              <th class="px-4 py-4 text-left">Expositor(a)</th>
+              <th class="px-4 py-4 text-left">Proyecto</th>
+              <th class="px-4 py-4 text-left">Coordina</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 dark:divide-slate-700">
+            <tr ng-repeat="m in mesas | filter:search" class="hover:bg-indigo-50/50 dark:hover:bg-indigo-900/20 transition-colors">
+              <td class="px-4 py-4 font-medium">
+                <a ng-href="{{m.enlace}}" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-300 hover:underline">
+                  {{m.mesa}} <span class="text-xs block opacity-70">↗ Unirse a Zoom</span>
+                </a>
+              </td>
+              <td class="px-4 py-4 text-sm">
+                <span class="block font-semibold">{{m.fecha}}</span>
+                <span class="text-gray-500 dark:text-gray-400">{{m.horario}}</span>
+              </td>
+              <td class="px-4 py-4 text-sm font-medium">{{m.expositor}}</td>
+              <td class="px-4 py-4 text-xs leading-normal max-w-xs italic">{{m.proyecto}}</td>
+              <td class="px-4 py-4 text-sm">{{m.coordina}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-4">📄 Recursos</h2>
+      <ul class="list-disc list-inside text-lg space-y-3">
+        <li><a href="Guía del comentarista Coloquio LGC.docx" download class="text-indigo-600 dark:text-indigo-400 underline hover:no-underline font-medium">Guía del comentarista Coloquio LGC.docx</a></li>
+        <li><a href="Programa coloquio 2026A.pdf" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 underline hover:no-underline font-medium">Programa coloquio 2026A.pdf</a></li>
+      </ul>
+    </section>
+
+    <section class="card bg-white dark:bg-slate-800 rounded-2xl shadow-md p-6 md:p-8 mb-10 border border-gray-200 dark:border-slate-700">
+      <h2 class="text-2xl md:text-3xl font-light text-indigo-600 dark:text-indigo-400 border-b border-indigo-200 dark:border-indigo-800 pb-2 mb-4">📌 Otras consideraciones</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-medium text-indigo-500 dark:text-indigo-300 mb-2">🔹 Antes del Coloquio</h3>
+          <p class="text-lg">Revisa con detenimiento el programa y ubica el día, la hora y la sala en que será tu participación, tanto como expositor y como comentarista. Tu participación como estudiante es obligatoria en esas dos, en las demás sesiones son opcionales, aunque te sugerimos participar como oyente en las que tengan temáticas de tu interés, ya que seguramente encontrarás información relevante para tu proyecto.</p>
+          <p class="text-lg mt-2">El acceso a las salas virtuales se podrá hacer 10 minutos antes del inicio del Coloquio.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-medium text-indigo-500 dark:text-indigo-300 mb-2">🔹 Durante el Coloquio</h3>
+          <ul class="list-disc list-inside text-lg space-y-1">
+            <li>Utilizar micrófono y audífono para la presentación.</li>
+            <li>Los participantes que no estén exponiendo, deben usar también audífonos y desactivar micrófono.</li>
+            <li>Sólo el expositor puede activar su video si cuenta con servicio de banda ancha adecuado (si hace lenta la conexión, bastará con el audio).</li>
+            <li>Es posible que en algún momento el sistema lo desconecte, sugerimos volver a ingresar.</li>
+            <li>En la medida de lo posible, conectarse desde una habitación tranquila sin mucho ruido y con buena iluminación.</li>
+            <li>Evitar contestar teléfono, escribir en el teclado o comer algún alimento mientras se tiene la sesión encendida.</li>
+            <li>Todos pueden participar vía Chat, sin embargo, se recomienda que los comentarios sean orales.</li>
+            <li>Todos los comentarios se realizarán de manera oral (sugerimos que grabes el audio como apoyo).</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-medium text-indigo-500 dark:text-indigo-300 mb-2">🔹 Después del Coloquio</h3>
+          <p class="text-lg">Deberán integrar las recomendaciones que les hicieron para poder entregar las actividades que lo indiquen.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-medium text-indigo-500 dark:text-indigo-300 mb-2">🔹 De la plataforma de videoconferencia multipunto</h3>
+          <p class="text-lg">Esta plataforma es utilizada por la Universidad de Guadalajara para fines de investigación y de formación y está basado en la plataforma ZOOM. Se puede acceder a través de: <a href="https://zoom.us/join" target="_blank" class="underline font-medium">https://zoom.us/join</a>. El ID de las salas reunión del Coloquio están especificadas en el programa. Cuando se ingresa por primera vez, es importante instalar un plug in.</p>
+          <p class="text-lg mt-2">Es posible participar en la videoconferencia a través de dispositivos móviles (teléfonos y tabletas) con iOS y Android.</p>
+          <p class="text-lg mt-2">Para ingresar desde dispositivos móviles, se debe ingresar por la opción “Entrar a una reunión” y posteriormente agregar el ID de reunión así como tu nombre de pila. Para ingresar desde dispositivos móviles, pueden darse de alta con su cuenta de correo y posteriormente ingresar el número de reunión (Número de sala) al que desean entrar.</p>
+          <div class="flex flex-wrap gap-4 mt-4">
+            <a href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings" target="_blank" rel="noopener noreferrer" class="bg-indigo-100 dark:bg-indigo-400 px-5 py-2 rounded-full text-indigo-800 dark:text-black hover:bg-indigo-200 font-bold">📱 Descarga para Android</a>
+            <a href="https://apps.apple.com/mx/app/zoom-workplace/id546505307" target="_blank" rel="noopener noreferrer" class="bg-indigo-100 dark:bg-indigo-400 px-5 py-2 rounded-full text-indigo-800 dark:text-black hover:bg-indigo-200 font-bold">📱 Descarga para iOS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-16 pt-6 border-t border-indigo-200 dark:border-indigo-800 text-center">
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-6">
+        <img src="UDG.png" alt="Logo UDG" class="h-12 md:h-16 object-contain">
+        <img src="CUGDL.png" alt="Logo CUGDL" class="h-12 md:h-16 object-contain">
+        <img src="LGC.png" alt="Logo LGC" class="h-12 md:h-16 object-contain">
+      </div>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Universidad de Guadalajara · CUGDL · Licenciatura en Gestión Cultural · 2026A</p>
+    </footer>
+  </div>
+
+  <script>
+    angular.module('colloquiumApp', [])
+      .controller('MainController', ['$scope', function($scope) {
+        $scope.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        $scope.toggleDarkMode = () => $scope.isDarkMode = !$scope.isDarkMode;
+
+        $scope.mesas = [
+          { fecha: "Lunes 09 marzo", expositor: "Nadia Amaya Velasco", proyecto: "Estrategias de difusión de la danza contemporánea y moderna en Zapopan; Jalisco; como una de las causas de su precariedad profesional.", coordina: "José Luis Mariscal", horario: "16:00 - 16:45", mesa: "Mesa 1. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Daniela Farrera Bracho", proyecto: "La danza contemporánea y sus condiciones de trabajo", coordina: "José Luis Mariscal", horario: "17:00 - 17:45", mesa: "Mesa 1. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Jonatan Aarón Álvarez Torres", proyecto: "Implementación de cuatro etapas de un programa educativo relacionado a la cinematografía documental, dirigido a adolescentes y jóvenes en el municipio de Texcoco, Estado de México", coordina: "José Luis Mariscal", horario: "18:00 - 18:45", mesa: "Mesa 1. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Andrea Vanessa Nieves Gutiérrez", proyecto: "Festival Cultural “Ulama, la historia y el juego autóctono de Sinaloa”", coordina: "Luis Gabriel Hernández", horario: "16:00 - 16:45", mesa: "Mesa 2. Patrimonio cultural 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Katherine Brianna González", proyecto: "Revitalización de la talabartería en Arandas, Jalisco: estrategias de marketing cultural y vinculación con la moda para su sostenibilidad", coordina: "Luis Gabriel Hernández", horario: "17:00 - 17:45", mesa: "Mesa 2. Patrimonio cultural 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Benjamín Murillo Chavira", proyecto: "Registro de las pastorelas de San Martín de las Flores", coordina: "Luis Gabriel Hernández", horario: "18:00 - 18:45", mesa: "Mesa 2. Patrimonio cultural 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Nalleli Vázquez Sánchez", proyecto: "Marketing para el Festival ‘Cuerpo al Descubierto’", coordina: "Janny Trujillo Amaya", horario: "16:00 - 16:45", mesa: "Mesa 3. Oferta y consumo cultural", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Lunes 09 marzo", expositor: "René Eduardo Nuño Guzmán", proyecto: "Formación de públicos para música de concierto", coordina: "Janny Trujillo Amaya", horario: "17:00 - 17:45", mesa: "Mesa 3. Oferta y consumo cultural", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Lunes 09 marzo", expositor: "Salma Lizbeth Diaz Martínez", proyecto: "La gestión cultural en contextos empresariales", coordina: "Janny Trujillo Amaya", horario: "18:00 - 18:45", mesa: "Mesa 3. Oferta y consumo cultural", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Martes 10 marzo", expositor: "Nandy Denisse Vera Domínguez", proyecto: "Arquitecturas del sonido: exposición desde la escucha", coordina: "José Luis Mariscal", horario: "16:00 - 16:45", mesa: "Mesa 4. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Martes 10 marzo", expositor: "Ana Sofia Toledo Rodríguez", proyecto: "Ciclo de Cine Documental al Aire Libre", coordina: "José Luis Mariscal", horario: "17:00 - 17:45", mesa: "Mesa 4. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Martes 10 marzo", expositor: "Julio César Lomelí Pérez", proyecto: "Taller de Mariachi Tradicional de Valle de Juárez", coordina: "José Luis Mariscal", horario: "18:00 - 18:45", mesa: "Mesa 4. Educación artística 1", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Martes 10 marzo", expositor: "Leticia Arreola Pérez", proyecto: "Patrimonio ferroviario en Chihuahua", coordina: "Luis Gabriel Hernández", horario: "16:00 - 16:45", mesa: "Mesa 5. Patrimonio cultural 2", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Martes 10 marzo", expositor: "Miguel Ángel Rodríguez", proyecto: "Músicos de la Chirimía en Atemajac de Brizuela", coordina: "Luis Gabriel Hernández", horario: "17:00 - 17:45", mesa: "Mesa 5. Patrimonio cultural 2", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Martes 10 marzo", expositor: "Santiago Pérez Gómez", proyecto: "Música de Negritos o Cuanegros en Amatlán", coordina: "Luis Gabriel Hernández", horario: "18:00 - 18:45", mesa: "Mesa 5. Patrimonio cultural 2", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Martes 10 marzo", expositor: "Samanta Gómez Mancera", proyecto: "UBUNTU", coordina: "Janny Trujillo Amaya", horario: "16:00 - 16:45", mesa: "Mesa 6. Oferta, consumo cultural e inclusión", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Martes 10 marzo", expositor: "Alejandra del Rosario Guzman", proyecto: "Intervención Cultural Accesible", coordina: "Janny Trujillo Amaya", horario: "17:00 - 17:45", mesa: "Mesa 6. Oferta, consumo cultural e inclusión", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Martes 10 marzo", expositor: "Ramón Rosas Caro", proyecto: "Encuentro de Cantautores Tlaknín & Songs", coordina: "Janny Trujillo Amaya", horario: "18:00 - 18:45", mesa: "Mesa 6. Oferta, consumo cultural e inclusión", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Martes 10 marzo", expositor: "Lenin Vega Catalán", proyecto: "Partituras Virreinales de la Nueva España", coordina: "Janny Trujillo Amaya", horario: "19:00 - 19:45", mesa: "Mesa 6. Oferta, consumo cultural e inclusión", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Clara Alejandra Gutiérrez", proyecto: "Foro de Cultura, Arte y Medio ambiente San Ignacio", coordina: "José Luis Mariscal", horario: "16:00 - 16:45", mesa: "Mesa 7. Gestión cultural comunitaria", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "David López Gómez", proyecto: "La comuna. Territorio Cultural", coordina: "José Luis Mariscal", horario: "17:00 - 17:45", mesa: "Mesa 7. Gestión cultural comunitaria", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Verónica Morales Cervantes", proyecto: "Migración rarámuri e impacto en su identidad", coordina: "José Luis Mariscal", horario: "18:00 - 18:45", mesa: "Mesa 7. Gestión cultural comunitaria", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Valeria Leal Ramírez", proyecto: "Cuahutli TN - Taller de máscaras de Tastoanes", coordina: "José Luis Mariscal", horario: "19:00 - 19:45", mesa: "Mesa 7. Gestión cultural comunitaria", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Maribel Becerril Aguilar", proyecto: "Talleres culturales en Manzana Quinta, Jiquipilco", coordina: "Luis Gabriel Hernández", horario: "16:00 - 16:45", mesa: "Mesa 8. Espacios culturales 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Luz Arlenni Mercado Díaz", proyecto: "Patrimonio escénico en el Puerto de Veracruz", coordina: "Luis Gabriel Hernández", horario: "17:00 - 17:45", mesa: "Mesa 8. Espacios culturales 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Carmen Argelia Rangel", proyecto: "Difusión de jóvenes artistas plásticos en Jalisco", coordina: "Luis Gabriel Hernández", horario: "18:00 - 18:45", mesa: "Mesa 8. Espacios culturales 1", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Miguel Ángel Barba", proyecto: "Podcast de promoción cultural en Guadalajara", coordina: "Janny Trujillo Amaya", horario: "16:00 - 16:45", mesa: "Mesa 9. Cultura digital y comunicación", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Vanessa Del Ángel Peniche", proyecto: "Directorio cultural digital: Pecetorio jarocho", coordina: "Janny Trujillo Amaya", horario: "17:00 - 17:45", mesa: "Mesa 9. Cultura digital y comunicación", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Andrea Gatell Rodríguez", proyecto: "Creatividad y autoría en la era de la IA", coordina: "Janny Trujillo Amaya", horario: "18:00 - 18:45", mesa: "Mesa 9. Cultura digital y comunicación", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Renata Ahumada Lugo", proyecto: "Asesoría a colectivos de Danza Contemporánea", coordina: "Janny Trujillo Amaya", horario: "19:00 - 19:45", mesa: "Mesa 9. Cultura digital y comunicación", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Alfredo Mendoza Padilla", proyecto: "La catrina monumental de Zapotlanejo", coordina: "Ofelia Muñoz Catalán", horario: "16:00 - 16:45", mesa: "Mesa 10. Investigación cultural", enlace: "https://us02web.zoom.us/j/3310451770?pwd=Tc5slwAQuvSYy6xdgmequOFEBHl8Gb.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Emilio Javier Díaz Lepe", proyecto: "Escena musical de rock alternativo en GDL", coordina: "Ofelia Muñoz Catalán", horario: "17:00 - 17:45", mesa: "Mesa 10. Investigación cultural", enlace: "https://us02web.zoom.us/j/3310451770?pwd=Tc5slwAQuvSYy6xdgmequOFEBHl8Gb.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Nora Rivera Silva", proyecto: "Festividad del Niño Perdido en Tuxpan", coordina: "Ofelia Muñoz Catalán", horario: "18:00 - 18:45", mesa: "Mesa 10. Investigación cultural", enlace: "https://us02web.zoom.us/j/3310451770?pwd=Tc5slwAQuvSYy6xdgmequOFEBHl8Gb.1" },
+          { fecha: "Miércoles 11 marzo", expositor: "Jazmín Iñiguez Bautista", proyecto: "Diagnóstico de la escena samba en Guadalajara", coordina: "Ofelia Muñoz Catalán", horario: "19:00 - 19:45", mesa: "Mesa 10. Investigación cultural", enlace: "https://us02web.zoom.us/j/3310451770?pwd=Tc5slwAQuvSYy6xdgmequOFEBHl8Gb.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Mónica Chavez Ibarra", proyecto: "Mujeres de Naucalpan Libres de Violencia", coordina: "José Luis Mariscal", horario: "15:00 - 15:45", mesa: "Mesa 11. Género", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Tanya Guadalupe Hernández", proyecto: "Madres que crean y crían", coordina: "José Luis Mariscal", horario: "16:00 - 16:45", mesa: "Mesa 11. Género", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Ana Margarita Alanís", proyecto: "Intervención cultural al son de las mujeres", coordina: "José Luis Mariscal", horario: "17:00 - 17:45", mesa: "Mesa 11. Género", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Itzel Barajas Fernández", proyecto: "El circo social como herramienta en mujeres", coordina: "José Luis Mariscal", horario: "18:00 - 18:45", mesa: "Mesa 11. Género", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Cynthia López Hernández", proyecto: "Habitarnos, territorio de mujeres", coordina: "José Luis Mariscal", horario: "19:00 - 19:45", mesa: "Mesa 11. Género", enlace: "https://udg-mx.zoom.us/j/88333211785?pwd=aL2GO6k49faWwhZVjWjoXqaZuiukfF.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Abraham Magaña Tiscareño", proyecto: "Barrio de Mexicaltzingo", coordina: "Luis Gabriel Hernández", horario: "16:00 - 16:45", mesa: "Mesa 12. Cultura y transformación social", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Verónica Guerrero Ruíz", proyecto: "Romper el silencio", coordina: "Luis Gabriel Hernández", horario: "17:00 - 17:45", mesa: "Mesa 12. Cultura y transformación social", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Miriam Elizabeth García", proyecto: "Desinterés por la Semana Cultural en Prep 8", coordina: "Luis Gabriel Hernández", horario: "18:00 - 18:45", mesa: "Mesa 12. Cultura y transformación social", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Betsaida Pardo Zepeda", proyecto: "Valoración de la cultura afromexicana", coordina: "Luis Gabriel Hernández", horario: "19:00 - 19:45", mesa: "Mesa 12. Cultura y transformación social", enlace: "https://udg-mx.zoom.us/j/81361639229?pwd=IZhA2A5nARadOP6dW1abbDuYHsbgFY.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Rosaura Aimee Romo", proyecto: "Diagnóstico de Xibalbá tianguis cultural", coordina: "Janny Trujillo Amaya", horario: "16:00 - 16:45", mesa: "Mesa 13. Espacios culturales 2", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Andrea Cecilia Rodríguez", proyecto: "Red de Agentes Culturales en Monterrey", coordina: "Janny Trujillo Amaya", horario: "17:00 - 17:45", mesa: "Mesa 13. Espacios culturales 2", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" },
+          { fecha: "Jueves 12 marzo", expositor: "Fabiola Anahi Anguiano", proyecto: "Investigación del museo arqueológico Guzmán", coordina: "Janny Trujillo Amaya", horario: "18:00 - 18:45", mesa: "Mesa 13. Espacios culturales 2", enlace: "https://udg-mx.zoom.us/j/83859743421?pwd=T1tTM2K6carIaZb1hyRovH5tfaWzSS.1" }
+        ];
+      }]);
+  </script>
+</body>
+</html>
